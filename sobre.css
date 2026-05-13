@@ -1,0 +1,41 @@
+body {
+    font-family: "Helvetica", "Lucida Grande", sans-serif;
+    /* cor das letras */
+    color: #3d3d3d;
+
+    /* espaçamentos */
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    background-color: #e1edf2;
+    /* espaçamento interno */
+    padding: 10px;
+}
+
+h2 {
+    border-bottom: 2px solid black;
+}
+
+figure {
+    margin: 30px;
+    padding: 15px;
+
+    text-align: center;
+    background-color: whitesmoke;
+    border: 1px solid lightgray;
+}
+
+img {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+figure img {
+    /* ocupa 100% da largura do elemento
+    pai */
+    width: 100%;
+}
