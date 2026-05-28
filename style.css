@@ -1,0 +1,588 @@
+/* ==========================================================================
+   1. VARIÁVEIS E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+:root {
+    --cls-bg: #FDFBF7;          /* Off-white aconchegante */
+    --cls-surface: #F5EFEB;     /* Bege claro */
+    --cls-primary: #3E4A3E;     /* Verde Oliva profundo (Elegância/Natureza) */
+    --cls-primary-light: #526252;
+    --cls-accent: #A66E53;      /* Terracota suave */
+    --cls-text: #2C2520;        /* Marrom quase preto para leitura confortável */
+    --cls-text-light: #70655E;  /* Marrom suave secundário */
+    --cls-white: #FFFFFF;
+    
+    --font-title: 'Playfair Display', Georgia, serif;
+    --font-body: 'Montserrat', sans-serif;
+    
+    --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto; /* Controlado via JS de forma mais suave */
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--cls-bg);
+    color: var(--cls-text);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s var(--transition-smooth);
+}
+
+/* Títulos Globais */
+.section-title {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.section-title h2 {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--cls-primary);
+    margin-bottom: 0.5rem;
+}
+
+.section-title p {
+    color: var(--cls-text-light);
+    font-style: italic;
+    font-family: var(--font-title);
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.4s var(--transition-smooth);
+}
+
+.btn-primary {
+    background-color: var(--cls-primary);
+    color: var(--cls-bg);
+}
+
+.btn-primary:hover {
+    background-color: var(--cls-primary-light);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: var(--cls-primary);
+    color: var(--cls-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--cls-primary);
+    color: var(--cls-bg);
+}
+
+/* ==========================================================================
+   2. HEADER & NAVEGAÇÃO
+   ========================================================================== */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(62, 74, 62, 0.08);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-title);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: var(--cls-primary);
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-menu a {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--cls-text-light);
+}
+
+.nav-menu a:hover {
+    color: var(--cls-accent);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 0.4rem 2rem 0.4rem 0.8rem;
+    border: none;
+    border-bottom: 1px solid var(--cls-text-light);
+    background: transparent;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    outline: none;
+    width: 150px;
+    transition: width 0.3s;
+}
+
+.search-bar input:focus {
+    width: 200px;
+    border-bottom-color: var(--cls-primary);
+}
+
+.search-bar i {
+    position: absolute;
+    right: 5px;
+    color: var(--cls-text-light);
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 1.5rem;
+    color: var(--cls-primary);
+    cursor: pointer;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: var(--cls-accent);
+    color: var(--cls-white);
+    font-size: 0.7rem;
+    font-weight: 500;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+.hero-section {
+    height: 100vh;
+    min-height: 600px;
+    background: linear-gradient(rgba(44, 37, 32, 0.4), rgba(44, 37, 32, 0.2)), 
+                url('https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    margin-top: 0;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin-left: calc((100vw - 1200px) / 2);
+    color: var(--cls-white);
+}
+
+/* Fallback de margem se a tela for menor que 1200px */
+@media (max-width: 1250px) {
+    .hero-content { margin-left: 5%; }
+}
+
+.hero-content h1 {
+    font-family: var(--font-title);
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.hero-content .btn {
+    background-color: var(--cls-bg);
+    color: var(--cls-primary);
+}
+
+.hero-content .btn:hover {
+    background-color: var(--cls-accent);
+    color: var(--cls-white);
+}
+
+/* ==========================================================================
+   4. DIFERENCIAIS
+   ========================================================================== */
+.features-section {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background-color: var(--cls-surface);
+    transition: transform 0.3s var(--transition-smooth);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--cls-accent);
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+    color: var(--cls-primary);
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: var(--cls-text-light);
+}
+
+/* ==========================================================================
+   5. VITRINE (PRODUTOS)
+   ========================================================================== */
+.products-section {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: var(--cls-white);
+    border: 1px solid rgba(62, 74, 62, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 10px 25px rgba(44, 37, 32, 0.05);
+}
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s var(--transition-smooth);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.04);
+}
+
+.product-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+}
+
+.product-material {
+    font-size: 0.8rem;
+    color: var(--cls-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.6rem;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--cls-accent);
+    margin-bottom: 1.2rem;
+}
+
+.product-info .btn-add-cart {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 0.7rem;
+}
+
+/* ==========================================================================
+   6. NOSSA HISTÓRIA
+   ========================================================================== */
+.history-section {
+    background-color: var(--cls-surface);
+    padding: 6rem 0;
+}
+
+.history-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.history-content {
+    flex: 1;
+}
+
+.history-content span {
+    font-family: var(--font-title);
+    font-style: italic;
+    color: var(--cls-accent);
+}
+
+.history-content h2 {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--cls-primary);
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.history-content p {
+    font-size: 1rem;
+    color: var(--cls-text-light);
+    margin-bottom: 1.2rem;
+}
+
+.history-image {
+    flex: 1;
+}
+
+.history-image img {
+    width: 100%;
+    height: 450px;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   7. FOOTER & NEWSLETTER
+   ========================================================================== */
+.main-footer {
+    background-color: var(--cls-primary);
+    color: var(--cls-bg);
+    padding: 5rem 2rem 2rem 2rem;
+}
+
+.footer-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(253, 251, 247, 0.1);
+}
+
+.footer-brand h3 {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    color: rgba(253, 251, 247, 0.7);
+    margin-bottom: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: var(--cls-bg);
+    opacity: 0.8;
+}
+
+.social-icons a:hover {
+    color: var(--cls-accent);
+    opacity: 1;
+}
+
+.footer-links h4,
+.footer-newsletter h4 {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    font-size: 0.95rem;
+    color: rgba(253, 251, 247, 0.7);
+}
+
+.footer-links a:hover {
+    color: var(--cls-white);
+}
+
+.footer-newsletter p {
+    font-size: 0.9rem;
+    color: rgba(253, 251, 247, 0.7);
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+    display: flex;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid rgba(253, 251, 247, 0.2);
+    background-color: rgba(253, 251, 247, 0.05);
+    color: var(--cls-white);
+    font-family: var(--font-body);
+    outline: none;
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(253, 251, 247, 0.4);
+}
+
+.newsletter-form .btn-submit {
+    background-color: var(--cls-bg);
+    color: var(--cls-primary);
+    border: none;
+    padding: 0 1.5rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter-form .btn-submit:hover {
+    background-color: var(--cls-accent);
+    color: var(--cls-white);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0 auto;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(253, 251, 247, 0.4);
+}
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 968px) {
+    .header-container {
+        padding: 1rem;
+    }
+    .nav-menu {
+        display: none; /* Em um cenário real, aqui entraria um menu hambúrguer */
+    }
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .history-container {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    .history-image img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-bar input {
+        width: 100px;
+    }
+    .search-bar input:focus {
+        width: 120px;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .section-title h2 {
+        font-size: 2rem;
+    }
+}

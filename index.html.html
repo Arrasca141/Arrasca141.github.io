@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ateliê Fio de Terra | Moda Artesanal & Consciente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo">Fio de Terra</a>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#diferenciais">Valores</a></li>
+                    <li><a href="#colecao">Coleção</a></li>
+                    <li><a href="#historia">Nossa História</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar produto...">
+                    <i class="ph ph-magnifying-glass"></i>
+                </div>
+                <div class="cart-icon" aria-label="Carrinho de compras">
+                    <i class="ph ph-handbag"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero-section">
+            <div class="hero-content">
+                <h1>Moda consciente feita à mão</h1>
+                <p>Roupas que contam histórias. Peças exclusivas em linho e algodão orgânico, criadas em um ritmo lento e respeitoso.</p>
+                <a href="#colecao" class="btn btn-primary">Ver Coleção</a>
+            </div>
+        </section>
+
+        <section id="diferenciais" class="features-section">
+            <div class="section-title">
+                <h2>O valor do feito à mão</h2>
+                <p>Nosso compromisso com o futuro da moda</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="ph ph-leaf"></i>
+                    <h3>100% Orgânico</h3>
+                    <p>Fibras naturais cultivadas sem o uso de agrotóxicos ou químicos nocivos.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="ph ph-needle"></i>
+                    <h3>Produção Local</h3>
+                    <p>Valorização de costureiras e artesãos locais, garantindo comércio justo.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="ph ph-hourglass-high"></i>
+                    <h3>Slow Fashion</h3>
+                    <p>Design atemporal feito para durar gerações, longe das tendências passageiras.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="colecao" class="products-section">
+            <div class="section-title">
+                <h2>Peças de Destaque</h2>
+                <p>Nossas criações mais recentes e queridas</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=600&auto=format&fit=crop" alt="Vestido Midi de Linho Cru">
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestido Midi Aura</h3>
+                        <p class="product-material">100% Linho Puro</p>
+                        <p class="product-price">R$ 389,00</p>
+                        <button class="btn btn-secondary btn-add-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=600&auto=format&fit=crop" alt="Camisa de Algodão Orgânico">
+                    </div>
+                    <div class="product-info">
+                        <h3>Camisa Algodão Leve</h3>
+                        <p class="product-material">Algodão Orgânico</p>
+                        <p class="product-price">R$ 249,00</p>
+                        <button class="btn btn-secondary btn-add-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=600&auto=format&fit=crop" alt="Calça Pantalona de Linho Terracota">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pantalona Raízes</h3>
+                        <p class="product-material">Linho & Algodão</p>
+                        <p class="product-price">R$ 319,00</p>
+                        <button class="btn btn-secondary btn-add-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=600&auto=format&fit=crop" alt="Túnica Rústica Unissex">
+                    </div>
+                    <div class="product-info">
+                        <h3>Túnica Minimalista</h3>
+                        <p class="product-material">Tear Manual</p>
+                        <p class="product-price">R$ 279,00</p>
+                        <button class="btn btn-secondary btn-add-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="historia" class="history-section">
+            <div class="history-container">
+                <div class="history-content">
+                    <span>O Coração do Ateliê</span>
+                    <h2>Criado devagar, pensado para sempre</h2>
+                    <p>O Fio de Terra nasceu do desejo de desacelerar. No nosso ateliê, cada corte é preciso, cada costura é feita com paciência e cada tingimento utiliza pigmentos extraídos da própria natureza, como cascas e folhas.</p>
+                    <p>Não produzimos em massa. Produzimos arte que você pode vestir, respeitando o tempo do artesão e o ciclo do nosso planeta.</p>
+                </div>
+                <div class="history-image">
+                    <img src="https://images.unsplash.com/photo-1558603668-6570496b66f8?q=80&w=800&auto=format&fit=crop" alt="Bastidor de costura e tecidos naturais no ateliê">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3>Fio de Terra</h3>
+                <p>Sustentabilidade e afeto em forma de vestuário.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="ph ph-pinterest-logo"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#diferenciais">Valores</a></li>
+                    <li><a href="#colecao">Coleção</a></li>
+                    <li><a href="#historia">Sobre Nós</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4>Conecte-se à nossa linha</h4>
+                <p>Receba crônicas de ateliê, lançamentos exclusivos e histórias de bastidores.</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" id="newsletter-email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit" class="btn-submit">Inscrever</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Fio de Terra. Desenvolvido com consciência e afeto.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
